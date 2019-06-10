@@ -8,9 +8,8 @@ cache:
         - "~/.platformio"
 env:
     - PLATFORMIO_CI_SRC=./Arduino/A85_KeyBoard_HID
-    - PLATFORMIO_CI_SRC=./lib/
 install:
     - pip install -U platformio
     - platformio update
 script:
-    - platformio ci --project-conf=./platformio.ini -v
+    - platformio ci --lib="./lib/TrinketHidCombo" --lib="./lib/TrinketKeyboard" --project-conf=./platformio.ini -v
